@@ -1,0 +1,363 @@
+/* =================================
+   NAVBAR
+================================= */
+
+.navbar {
+  width: 100%;
+
+  background: #ffffff;
+
+  border-bottom: 1px solid #e5e7eb;
+
+  position: sticky;
+
+  top: 0;
+
+  z-index: 1000;
+}
+
+
+/* =================================
+   NAVBAR INNER
+================================= */
+
+.navbar-inner {
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  min-height: 64px;
+
+  padding: 0 20px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 25px;
+}
+
+
+/* =================================
+   LOGO
+================================= */
+
+.navbar-logo {
+  flex-shrink: 0;
+
+  text-decoration: none;
+
+  color: #111827;
+
+  font-size: 21px;
+
+  font-weight: 700;
+
+  letter-spacing: -0.5px;
+}
+
+.navbar-logo:hover {
+  color: #2563eb;
+}
+
+
+/* =================================
+   NAVIGATION LINKS
+================================= */
+
+.navbar-links {
+  display: flex;
+
+  align-items: center;
+
+  gap: 22px;
+
+  flex-shrink: 0;
+}
+
+.navbar-links a {
+  position: relative;
+
+  text-decoration: none;
+
+  color: #6b7280;
+
+  font-size: 13px;
+
+  font-weight: 500;
+
+  padding: 22px 0;
+
+  transition:
+    color 0.2s ease;
+}
+
+.navbar-links a:hover {
+  color: #111827;
+}
+
+
+/* Active link */
+
+.navbar-links a.active {
+  color: #2563eb;
+}
+
+
+/* Active underline */
+
+.navbar-links a.active::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+
+  right: 0;
+
+  bottom: 14px;
+
+  height: 2px;
+
+  background: #2563eb;
+
+  border-radius: 2px;
+}
+
+
+/* =================================
+   SEARCH
+================================= */
+
+.navbar-search {
+  height: 36px;
+
+  flex: 1;
+
+  max-width: 280px;
+
+  margin-left: auto;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 0 10px;
+
+  border: 1px solid #d1d5db;
+
+  border-radius: 7px;
+
+  background: #ffffff;
+
+  color: #6b7280;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.navbar-search:focus-within {
+  border-color: #2563eb;
+
+  box-shadow:
+    0 0 0 2px rgba(37, 99, 235, 0.08);
+}
+
+
+/* Search input */
+
+.navbar-search input {
+  width: 100%;
+
+  min-width: 0;
+
+  border: none;
+
+  outline: none;
+
+  background: transparent;
+
+  color: #111827;
+
+  font-size: 13px;
+}
+
+.navbar-search input::placeholder {
+  color: #9ca3af;
+}
+
+
+/* =================================
+   SEARCH CLEAR BUTTON
+================================= */
+
+.navbar-search-clear {
+  width: 24px;
+
+  height: 24px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border: none;
+
+  background: transparent;
+
+  color: #6b7280;
+
+  cursor: pointer;
+
+  border-radius: 4px;
+}
+
+.navbar-search-clear:hover {
+  color: #111827;
+
+  background: #f3f4f6;
+}
+
+
+/* =================================
+   WISHLIST + CART
+================================= */
+
+.navbar-actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  flex-shrink: 0;
+}
+
+
+/* Icon buttons */
+
+.navbar-icon {
+  width: 34px;
+
+  height: 34px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border: none;
+
+  border-radius: 6px;
+
+  background: transparent;
+
+  color: #374151;
+
+  cursor: pointer;
+
+  transition:
+    color 0.2s ease,
+    background 0.2s ease;
+}
+
+.navbar-icon:hover {
+  color: #2563eb;
+
+  background: #eff6ff;
+}
+
+
+/* =================================
+   RESPONSIVE
+================================= */
+
+@media (max-width: 1000px) {
+
+  .navbar-inner {
+    gap: 18px;
+  }
+
+  .navbar-links {
+    gap: 15px;
+  }
+
+  .navbar-search {
+    max-width: 220px;
+  }
+}
+
+
+@media (max-width: 800px) {
+
+  .navbar-inner {
+    gap: 15px;
+  }
+
+  .navbar-links {
+    gap: 12px;
+  }
+
+  .navbar-links a {
+    font-size: 12px;
+  }
+
+  .navbar-search {
+    max-width: 180px;
+  }
+}
+
+
+@media (max-width: 650px) {
+
+  .navbar-inner {
+    min-height: 60px;
+
+    padding: 0 15px;
+
+    gap: 12px;
+  }
+
+  .navbar-logo {
+    font-size: 18px;
+  }
+
+  .navbar-links {
+    display: none;
+  }
+
+  .navbar-search {
+    max-width: none;
+
+    height: 34px;
+  }
+
+  .navbar-actions {
+    gap: 3px;
+  }
+
+  .navbar-icon {
+    width: 32px;
+
+    height: 32px;
+  }
+}
+
+
+@media (max-width: 400px) {
+
+  .navbar-search {
+    max-width: 150px;
+  }
+
+  .navbar-logo {
+    font-size: 17px;
+  }
+}

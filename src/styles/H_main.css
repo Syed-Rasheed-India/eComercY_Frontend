@@ -1,0 +1,910 @@
+/* =========================================
+   RESET
+========================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  background: #ffffff;
+  color: #252a35;
+}
+
+button,
+input {
+  font-family: inherit;
+}
+
+
+/* =========================================
+   PAGE
+========================================= */
+
+.home-page {
+  min-height: 100vh;
+  width: 100%;
+
+  background: #ffffff;
+}
+
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+.navbar {
+  height: 58px;
+
+  border-bottom: 1px solid #e4e7ec;
+
+  background: #ffffff;
+
+  display: flex;
+  align-items: center;
+}
+
+.nav-container {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 32px;
+}
+
+
+/* =========================================
+   LOGO
+========================================= */
+
+.logo {
+  color: #1769e0;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  width: 82px;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+.nav-links {
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+
+  gap: 5px;
+}
+
+.nav-links a {
+  text-decoration: none;
+
+  color: #3f4652;
+
+  font-size: 13px;
+  font-weight: 400;
+
+  padding: 8px 12px;
+
+  border-radius: 6px;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.nav-links a:hover {
+  background: #f3f5f8;
+}
+
+.nav-links a.active {
+  background: #e9edf7;
+
+  color: #303743;
+}
+
+
+/* =========================================
+   SEARCH
+========================================= */
+
+.search-box {
+  height: 34px;
+  width: 290px;
+
+  margin-left: 15px;
+
+  background: #f5f6f8;
+
+  border-radius: 7px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 10px;
+
+  color: #8b929e;
+}
+
+.search-box svg {
+  flex-shrink: 0;
+}
+
+.search-box input {
+  width: 100%;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  margin-left: 8px;
+
+  font-size: 12px;
+
+  color: #3d434d;
+}
+
+.search-box input::placeholder {
+  color: #9ba1aa;
+
+  font-size: 12px;
+}
+
+
+/* =========================================
+   NAV ACTIONS
+========================================= */
+
+.nav-actions {
+  margin-left: auto;
+
+  display: flex;
+  align-items: center;
+
+  gap: 19px;
+}
+
+.nav-icon {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  color: #202a3a;
+
+  cursor: pointer;
+}
+
+.icon-badge {
+  position: absolute;
+
+  top: -8px;
+  right: -8px;
+
+  min-width: 13px;
+  height: 13px;
+
+  padding: 0 3px;
+
+  background: #eef2f8;
+
+  color: #175dc9;
+
+  border-radius: 50%;
+
+  font-size: 8px;
+  font-weight: 500;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart-badge {
+  top: -8px;
+  right: -7px;
+}
+
+
+/* =========================================
+   PROFILE
+========================================= */
+
+.profile-icon {
+  width: 28px;
+  height: 28px;
+
+  border-radius: 50%;
+
+  background: #075dc9;
+
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+  min-height: calc(100vh - 58px);
+
+  display: flex;
+  align-items: center;
+
+  padding: 50px 50px 60px;
+
+  background:
+    radial-gradient(
+      circle at 80% 50%,
+      rgba(241, 243, 248, 0.65),
+      transparent 36%
+    ),
+    #ffffff;
+}
+
+
+/* =========================================
+   HERO CONTENT
+========================================= */
+
+.hero-content {
+  width: 57%;
+
+  padding-top: 3px;
+}
+
+
+/* =========================================
+   COLLECTION LABEL
+========================================= */
+
+.collection-label {
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  color: #075dc9;
+
+  font-size: 12px;
+  font-weight: 500;
+
+  margin-bottom: 25px;
+}
+
+.collection-label svg {
+  stroke-width: 2.3;
+}
+
+
+/* =========================================
+   HEADING
+========================================= */
+
+.hero-content h1 {
+  font-size: 38px;
+
+  line-height: 1.25;
+
+  font-weight: 600;
+
+  letter-spacing: -0.8px;
+
+  color: #292e38;
+
+  margin-bottom: 22px;
+}
+
+.hero-content h1 span {
+  color: #075dc9;
+}
+
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.hero-description {
+  max-width: 510px;
+
+  color: #525965;
+
+  font-size: 14px;
+
+  line-height: 1.7;
+
+  margin-bottom: 26px;
+}
+
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.hero-buttons {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 25px;
+}
+
+.shop-btn,
+.explore-btn {
+  height: 42px;
+
+  border: none;
+
+  border-radius: 7px;
+
+  font-size: 13px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.shop-btn {
+  padding: 0 17px;
+
+  background: #075dc9;
+
+  color: white;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  box-shadow: 0 3px 7px rgba(7, 93, 201, 0.15);
+}
+
+.shop-btn span {
+  font-size: 17px;
+
+  line-height: 0;
+}
+
+.shop-btn:hover {
+  background: #064fae;
+
+  transform: translateY(-1px);
+}
+
+.explore-btn {
+  padding: 0 21px;
+
+  background: #ededed;
+
+  color: #31353b;
+}
+
+.explore-btn:hover {
+  background: #e3e3e3;
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================================
+   STATS
+========================================= */
+
+.stats {
+  width: 450px;
+
+  border-top: 1px solid #e3e5e8;
+
+  padding-top: 14px;
+
+  display: flex;
+}
+
+.stat {
+  width: 105px;
+
+  padding-left: 0;
+
+  margin-right: 22px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.stat + .stat {
+  border-left: 1px solid #e7e8ea;
+
+  padding-left: 20px;
+}
+
+.stat strong {
+  font-size: 13px;
+
+  font-weight: 500;
+
+  color: #31363f;
+}
+
+.stat span {
+  font-size: 12px;
+
+  color: #626873;
+}
+
+
+/* =========================================
+   HERO VISUAL
+========================================= */
+
+.hero-visual {
+  position: relative;
+
+  width: 43%;
+
+  height: 360px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-left: 10px;
+}
+
+
+/* =========================================
+   DECORATIVE BACKGROUND
+========================================= */
+
+.image-decoration {
+  position: absolute;
+
+  width: 310px;
+  height: 300px;
+
+  border-radius: 17px;
+
+  background: #dfe6f4;
+
+  transform: rotate(-3deg);
+
+  right: 8px;
+  top: 25px;
+}
+
+.decoration-two {
+  background: #ececef;
+
+  transform: rotate(3deg);
+
+  right: 22px;
+  top: 32px;
+}
+
+
+/* =========================================
+   MAIN IMAGE
+========================================= */
+
+.hero-image-wrapper {
+  position: relative;
+
+  width: 300px;
+  height: 300px;
+
+  overflow: hidden;
+
+  border-radius: 13px;
+
+  z-index: 3;
+
+  box-shadow:
+    0 8px 18px rgba(0, 0, 0, 0.08);
+}
+
+.hero-image-wrapper img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+}
+
+
+/* =========================================
+   DELIVERY CARD
+========================================= */
+
+.delivery-card {
+  position: absolute;
+
+  z-index: 5;
+
+  left: 25px;
+  bottom: 5px;
+
+  height: 58px;
+
+  min-width: 205px;
+
+  padding: 8px 13px 8px 8px;
+
+  background: #ffffff;
+
+  border-radius: 9px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  box-shadow:
+    0 5px 16px rgba(0, 0, 0, 0.13),
+    0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+
+/* =========================================
+   DELIVERY ICON
+========================================= */
+
+.delivery-icon {
+  width: 33px;
+  height: 33px;
+
+  border-radius: 6px;
+
+  background: #286be0;
+
+  color: #ffffff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+}
+
+
+/* =========================================
+   DELIVERY TEXT
+========================================= */
+
+.delivery-text {
+  display: flex;
+  flex-direction: column;
+
+  gap: 3px;
+
+  white-space: nowrap;
+}
+
+.delivery-text strong {
+  color: #34383f;
+
+  font-size: 12px;
+
+  font-weight: 500;
+}
+
+.delivery-text span {
+  color: #666c75;
+
+  font-size: 11px;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+
+  .nav-container {
+    padding: 0 24px;
+  }
+
+  .search-box {
+    width: 220px;
+  }
+
+  .hero {
+    padding: 40px 30px 50px;
+  }
+
+  .hero-content h1 {
+    font-size: 34px;
+  }
+
+  .hero-description {
+    font-size: 13px;
+  }
+
+  .hero-image-wrapper {
+    width: 270px;
+    height: 270px;
+  }
+
+  .image-decoration {
+    width: 280px;
+    height: 275px;
+  }
+
+}
+
+
+/* =========================================
+   TABLET / SMALL LAPTOP
+========================================= */
+
+@media (max-width: 900px) {
+
+  .nav-links {
+    display: none;
+  }
+
+  .search-box {
+    margin-left: 15px;
+
+    width: 260px;
+  }
+
+  .hero {
+    padding: 40px 25px;
+  }
+
+  .hero-content {
+    width: 55%;
+  }
+
+  .hero-visual {
+    width: 45%;
+  }
+
+  .hero-content h1 {
+    font-size: 32px;
+  }
+
+  .hero-description {
+    font-size: 13px;
+  }
+
+  .hero-image-wrapper {
+    width: 245px;
+    height: 245px;
+  }
+
+  .image-decoration {
+    width: 255px;
+    height: 250px;
+  }
+
+  .delivery-card {
+    left: 0;
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+  .navbar {
+    height: 58px;
+  }
+
+  .nav-container {
+    padding: 0 18px;
+  }
+
+  .search-box {
+    display: none;
+  }
+
+  .nav-actions {
+    gap: 14px;
+  }
+
+  .nav-icon svg {
+    width: 19px;
+    height: 19px;
+  }
+
+  .hero {
+    min-height: auto;
+
+    flex-direction: column;
+
+    padding: 55px 25px;
+  }
+
+  .hero-content {
+    width: 100%;
+  }
+
+  .collection-label {
+    font-size: 12px;
+  }
+
+  .hero-content h1 {
+    font-size: 30px;
+
+    line-height: 1.3;
+  }
+
+  .hero-description {
+    max-width: 100%;
+
+    font-size: 14px;
+  }
+
+  .hero-buttons {
+    margin-bottom: 28px;
+  }
+
+  .stats {
+    width: 100%;
+  }
+
+  .hero-visual {
+    width: 100%;
+
+    height: 330px;
+
+    margin-top: 45px;
+    margin-left: 0;
+  }
+
+  .hero-image-wrapper {
+    width: 270px;
+    height: 270px;
+  }
+
+  .image-decoration {
+    width: 280px;
+    height: 275px;
+  }
+
+  .delivery-card {
+    left: calc(50% - 140px);
+  }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 430px) {
+
+  .logo {
+    width: auto;
+
+    font-size: 13px;
+  }
+
+  .nav-actions {
+    margin-left: auto;
+  }
+
+  .profile-icon {
+    width: 26px;
+    height: 26px;
+  }
+
+  .hero {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .hero-content h1 {
+    font-size: 27px;
+  }
+
+  .hero-description {
+    font-size: 13px;
+  }
+
+  .shop-btn,
+  .explore-btn {
+    font-size: 12px;
+  }
+
+  .stats {
+    width: 100%;
+  }
+
+  .stat {
+    margin-right: 5px;
+  }
+
+  .stat + .stat {
+    padding-left: 10px;
+  }
+
+  .stat strong {
+    font-size: 12px;
+  }
+
+  .stat span {
+    font-size: 11px;
+  }
+
+  .hero-image-wrapper {
+    width: 250px;
+    height: 250px;
+  }
+
+  .image-decoration {
+    width: 260px;
+    height: 255px;
+  }
+
+  .delivery-card {
+    left: calc(50% - 125px);
+
+    min-width: 190px;
+  }
+
+}
+
+.navbar-logo {
+  flex-shrink: 0;
+
+  text-decoration: none;
+
+  color: #111827;
+
+  font-size: 21px;
+
+  font-weight: 700;
+
+  letter-spacing: -0.5px;
+
+  margin-right: 40px;
+}
+
+.navbar-logo:hover {
+  color: #2563eb;
+}

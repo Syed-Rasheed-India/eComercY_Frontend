@@ -1,0 +1,594 @@
+/* =========================================
+   FEATURED SECTION
+========================================= */
+
+.featured-section {
+  width: 100%;
+  padding: 25px 19px 35px;
+  background: #ffffff;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.featured-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  margin-bottom: 28px;
+}
+
+
+/* Small blue title */
+
+.featured-label {
+  margin: 0 0 7px;
+
+  color: #075dc9;
+
+  font-size: 19px;
+  font-weight: 500;
+
+  letter-spacing: 0.5px;
+}
+
+
+/* Main title */
+
+.featured-header h2 {
+  margin: 0;
+
+  color: #252a35;
+
+  font-size: 14px;
+  font-weight: 400;
+}
+
+
+/* =========================================
+   PRODUCT GRID
+========================================= */
+
+.products-grid {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 34px 20px;
+}
+
+
+/* =========================================
+   PRODUCT CARD
+========================================= */
+
+.product-card {
+  min-width: 0;
+
+  background: #ffffff;
+
+  border: 1px solid #eeeeee;
+  border-radius: 12px;
+
+  overflow: hidden;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =========================================
+   PRODUCT IMAGE
+========================================= */
+
+.product-image-container {
+  position: relative;
+
+  width: 100%;
+  height: 180px;
+
+  background: #f1f1ed;
+
+  overflow: hidden;
+}
+
+.product-image {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-image {
+  transform: scale(1.03);
+}
+
+
+/* =========================================
+   DISCOUNT BADGE
+========================================= */
+
+.discount-badge {
+  position: absolute;
+
+  top: 8px;
+  left: 8px;
+
+  padding: 4px 7px;
+
+  border-radius: 4px;
+
+  background: #075dc9;
+  color: #ffffff;
+
+  font-size: 9px;
+  font-weight: 500;
+
+  z-index: 2;
+}
+
+
+/* =========================================
+   OUT OF STOCK
+========================================= */
+
+.stock-badge {
+  position: absolute;
+
+  top: 8px;
+  left: 8px;
+
+  padding: 4px 7px;
+
+  border-radius: 4px;
+
+  background: #c92e2e;
+  color: #ffffff;
+
+  font-size: 9px;
+  font-weight: 500;
+
+  z-index: 2;
+}
+
+
+/* =========================================
+   BEST SELLING
+   Value comes from backend:
+   product.highDemand
+========================================= */
+
+.demand-badge {
+  position: absolute;
+
+  bottom: 8px;
+  left: 8px;
+
+  padding: 4px 7px;
+
+  border-radius: 4px;
+
+  background: #075dc9;
+  color: #ffffff;
+
+  font-size: 9px;
+  font-weight: 500;
+
+  z-index: 2;
+}
+
+
+/* =========================================
+   WISHLIST
+========================================= */
+
+.wishlist-btn {
+  position: absolute;
+
+  top: 8px;
+  right: 8px;
+
+  width: 27px;
+  height: 27px;
+
+  padding: 0;
+
+  border: none;
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.92);
+
+  color: #34383f;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+
+  z-index: 2;
+}
+
+.wishlist-btn:hover {
+  background: #ffffff;
+
+  color: #075dc9;
+
+  transform: scale(1.05);
+}
+
+.wishlist-btn.active {
+  color: #075dc9;
+}
+
+
+/* =========================================
+   PRODUCT INFORMATION
+========================================= */
+
+.product-info {
+  padding: 13px 12px 12px;
+}
+
+
+/* =========================================
+   CATEGORY + RATING
+========================================= */
+
+.product-top-row {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 8px;
+
+  margin-bottom: 6px;
+}
+
+.product-category {
+  min-width: 0;
+
+  color: #777d88;
+
+  font-size: 11px;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.rating {
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 3px;
+
+  color: #3e444d;
+
+  font-size: 10px;
+}
+
+.rating svg {
+  color: #f4a400;
+}
+
+
+/* =========================================
+   PRODUCT NAME
+========================================= */
+
+.product-info h3 {
+  margin: 0;
+
+  min-height: 18px;
+
+  color: #30353d;
+
+  font-size: 12px;
+  font-weight: 400;
+
+  line-height: 1.5;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+}
+
+
+/* =========================================
+   PRODUCT BOTTOM
+========================================= */
+
+.product-bottom {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 10px;
+
+  margin-top: 12px;
+}
+
+
+/* =========================================
+   PRICE
+========================================= */
+
+.price-container {
+  min-width: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+}
+
+.actual-price {
+  color: #075dc9;
+
+  font-size: 12px;
+  font-weight: 500;
+
+  white-space: nowrap;
+}
+
+.original-price {
+  color: #858a93;
+
+  font-size: 9px;
+
+  text-decoration: line-through;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================
+   CART BUTTON
+========================================= */
+
+.cart-btn {
+  flex-shrink: 0;
+
+  width: 30px;
+  height: 30px;
+
+  padding: 0;
+
+  border: none;
+  border-radius: 8px;
+
+  background: #075dc9;
+  color: #ffffff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.cart-btn:hover {
+  background: #064fae;
+
+  transform: translateY(-1px);
+}
+
+.cart-btn.disabled {
+  background: #eeeeee;
+
+  color: #92969c;
+
+  cursor: not-allowed;
+
+  transform: none;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1000px) {
+
+  .featured-section {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .products-grid {
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+
+    gap: 26px 16px;
+  }
+
+}
+
+
+/* =========================================
+   SMALL TABLET
+========================================= */
+
+@media (max-width: 750px) {
+
+  .featured-section {
+    padding: 22px 16px 30px;
+  }
+
+  .featured-header {
+    margin-bottom: 22px;
+  }
+
+  .products-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 20px 14px;
+  }
+
+  .product-image-container {
+    height: 190px;
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+  .featured-section {
+    padding: 20px 12px 28px;
+  }
+
+  .featured-header {
+    margin-bottom: 20px;
+  }
+
+  .featured-label {
+    font-size: 11px;
+  }
+
+  .featured-header h2 {
+    font-size: 14px;
+  }
+
+  .products-grid {
+    grid-template-columns: 1fr 1fr;
+
+    gap: 14px 10px;
+  }
+
+  .product-image-container {
+    height: 165px;
+  }
+
+  .product-info {
+    padding: 11px 9px 10px;
+  }
+
+  .product-category {
+    font-size: 9px;
+  }
+
+  .rating {
+    font-size: 9px;
+  }
+
+  .rating svg {
+    width: 9px;
+    height: 9px;
+  }
+
+  .product-info h3 {
+    font-size: 11px;
+  }
+
+  .product-bottom {
+    margin-top: 9px;
+  }
+
+  .actual-price {
+    font-size: 11px;
+  }
+
+  .original-price {
+    font-size: 8px;
+  }
+
+  .cart-btn {
+    width: 28px;
+    height: 28px;
+
+    border-radius: 7px;
+  }
+
+  .wishlist-btn {
+    width: 25px;
+    height: 25px;
+
+    top: 7px;
+    right: 7px;
+  }
+
+  .wishlist-btn svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  .discount-badge,
+  .stock-badge,
+  .demand-badge {
+    font-size: 8px;
+
+    padding: 3px 6px;
+  }
+
+}
+
+
+/* =========================================
+   VERY SMALL MOBILE
+========================================= */
+
+@media (max-width: 360px) {
+
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .product-image-container {
+    height: 210px;
+  }
+
+  .product-info {
+    padding: 12px;
+  }
+
+  .product-info h3 {
+    font-size: 12px;
+  }
+
+  .actual-price {
+    font-size: 12px;
+  }
+
+}

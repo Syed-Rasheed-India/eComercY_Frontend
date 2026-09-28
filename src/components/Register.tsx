@@ -1,6 +1,6 @@
 import { useState } from "react";
 import '../styles/Register.css'
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import {
   User,
   Mail,
@@ -8,7 +8,10 @@ import {
 } from "lucide-react";
 // import "./Register.css";
 
+
+
 function Register() {
+  let navigate = useNavigate();
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -51,6 +54,8 @@ function Register() {
     let data = await response.json();
 
        localStorage.setItem("token", data.token);
+
+       navigate('/home')
 
         console.log("Token:", data.token);
 

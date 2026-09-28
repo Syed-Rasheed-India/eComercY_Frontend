@@ -88,7 +88,7 @@ function Login() {
 
 
       // Go to home page
-      navigate("/");
+      navigate("/home");
 
 
     } catch (error) {
