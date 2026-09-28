@@ -8,20 +8,64 @@ import {
 
 import "../styles/FeaturedProducts.css";
 
+
+// =====================================================
+// PRODUCT TYPE
+// =====================================================
+
+interface Product {
+  _id: string;
+  name: string;
+  category: string;
+  subcategory: string;
+
+  images: string[];
+
+  description: string;
+
+  features: string[];
+
+  specifications: {
+    name: string;
+    value: string;
+  }[];
+
+  originalPrice: number;
+  actualPrice: number;
+  discountPercentage: number;
+
+  rating: number;
+
+  wishlist: boolean;
+
+  initialStock: number;
+  stock: number;
+  totalStockSold: number;
+
+  // Calculated by backend
+  highDemand?: boolean;
+}
+
+
+// =====================================================
+// COMPONENT
+// =====================================================
+
 const FeaturedProducts = () => {
 
   // =====================================================
   // STATE
   // =====================================================
 
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState<Product[]>([]);
+
   const [loading, setLoading] = useState(true);
+
   const [error, setError] = useState("");
 
 
   // =====================================================
   // GET FEATURED PRODUCTS
-  // Business logic is handled by the backend.
   // =====================================================
 
   useEffect(() => {
@@ -34,31 +78,45 @@ const FeaturedProducts = () => {
           "https://ecomercy-backend.onrender.com/featured"
         );
 
-        // Check whether API request was successful
+
+        // Check API response
         if (!response.ok) {
-          throw new Error("Failed to fetch products");
+
+          throw new Error(
+            "Failed to fetch products"
+          );
+
         }
 
-        // Convert response into JavaScript object
+
+        // Convert response to JavaScript object
         const data = await response.json();
 
-        // Store products received from backend
+
+        // Store products
         setProducts(data.products);
+
 
       } catch (error) {
 
-        console.error("Featured products error:", error);
+        console.error(
+          "Featured products error:",
+          error
+        );
 
-        setError("Unable to load products");
+        setError(
+          "Unable to load products"
+        );
+
 
       } finally {
 
-        // Stop loading after request finishes
         setLoading(false);
 
       }
 
     };
+
 
     getFeaturedProducts();
 
@@ -72,6 +130,7 @@ const FeaturedProducts = () => {
   if (loading) {
 
     return (
+
       <section className="featured-section">
 
         <div className="featured-header">
@@ -95,6 +154,7 @@ const FeaturedProducts = () => {
         </p>
 
       </section>
+
     );
 
   }
@@ -107,6 +167,7 @@ const FeaturedProducts = () => {
   if (error) {
 
     return (
+
       <section className="featured-section">
 
         <div className="featured-header">
@@ -130,6 +191,7 @@ const FeaturedProducts = () => {
         </p>
 
       </section>
+
     );
 
   }
@@ -142,6 +204,7 @@ const FeaturedProducts = () => {
   return (
 
     <section className="featured-section">
+
 
       {/* =================================================
           HEADER
@@ -172,11 +235,9 @@ const FeaturedProducts = () => {
 
         {products.map((product) => {
 
+
           // =================================================
-          // UI LOGIC ONLY
-          //
-          // Business logic such as highDemand is already
-          // calculated by the backend.
+          // OUT OF STOCK
           // =================================================
 
           const outOfStock =
@@ -187,8 +248,9 @@ const FeaturedProducts = () => {
 
             <article
               className="product-card"
-              key={product._id || product.name}
+              key={product._id}
             >
+
 
               {/* =================================================
                   PRODUCT IMAGE
@@ -197,14 +259,15 @@ const FeaturedProducts = () => {
               <div className="product-image-container">
 
                 <img
-                  src={product.image}
+                  src={product.images?.[0]}
                   alt={product.name}
                   className="product-image"
+                  loading="lazy"
                 />
 
 
                 {/* =================================================
-                    DISCOUNT BADGE
+                    DISCOUNT
                 ================================================= */}
 
                 {product.discountPercentage > 0 &&
@@ -236,7 +299,6 @@ const FeaturedProducts = () => {
 
                 {/* =================================================
                     BEST SELLING
-                    `highDemand` comes from the backend.
                 ================================================= */}
 
                 {product.highDemand &&
@@ -336,7 +398,7 @@ const FeaturedProducts = () => {
 
                     <span className="actual-price">
 
-                      $
+                      ₹
                       {Number(
                         product.actualPrice
                       ).toFixed(2)}
@@ -344,15 +406,18 @@ const FeaturedProducts = () => {
                     </span>
 
 
-                    {/* Original price only appears
-                        when it is greater than actual price */}
+                    {/* Original price */}
 
-                    {Number(product.originalPrice) >
-                      Number(product.actualPrice) && (
+                    {Number(
+                      product.originalPrice
+                    ) >
+                      Number(
+                        product.actualPrice
+                      ) && (
 
                       <span className="original-price">
 
-                        $
+                        ₹
                         {Number(
                           product.originalPrice
                         ).toFixed(2)}
