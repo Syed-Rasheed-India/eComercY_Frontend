@@ -31,7 +31,7 @@ const FeaturedProducts = () => {
       try {
 
         const response = await fetch(
-          "http://localhost:3000/featured"
+          "https://ecomercy-backend.onrender.com/featured"
         );
 
         // Check whether API request was successful

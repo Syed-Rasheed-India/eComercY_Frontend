@@ -11,7 +11,7 @@ import { useNavigate } from "react-router-dom";
 import Navbar from "./Navbar";
 import "../styles/Cart.css";
 
-const API_URL = "http://localhost:3000";
+const API_URL = "https://ecomercy-backend.onrender.com";
 
 interface Product {
   _id: string;

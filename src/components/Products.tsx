@@ -18,7 +18,7 @@ import "../styles/Products.css";
 // API
 // ======================================================
 
-const API_URL = "http://localhost:3000";
+const API_URL = "https://ecomercy-backend.onrender.com";
 
 // ======================================================
 // CATEGORIES
